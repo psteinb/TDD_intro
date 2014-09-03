@@ -1,118 +1,104 @@
 <!doctype html>
-<html lang="en">    
-<head>
+<html lang="en">
+
+  <head>
     <meta charset="utf-8">
-    <title>TDD</title>
-    <link rel="stylesheet" href="css/reveal.min.css">
-    <link rel="stylesheet" href="css/theme/default.css" id="theme">   
-    <meta name="description" content="A hands-on introduction to test-driven development">
+
+    <title>Test-Driven Development - A hands-on introduction</title>
+
+    <meta name="description" content="Tests first, make fail, make pass and refactor">
     <meta name="author" content="Peter Steinbach">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/sky.css" id="theme">
 
-    <!--Add support for earlier versions of Internet Explorer -->
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'css/print/pdf.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
     <!--[if lt IE 9]>
-    <script src="lib/js/html5shiv.js"></script>
-    <![endif]-->
-    <!-- from http://lcottereau.github.io/po-non-certifie-slides/#/6 -->
-    <style>
-      <!-- .reveal a:not(.image) { -->
-      <!-- color: white; -->
-      <!-- } -->
-      <!-- .reveal a:not(.image):hover { -->
-      <!-- color: white; -->
-      <!-- text-decoration: underline; -->
-      <!-- } -->
-      <!-- li.email { -->
-      <!-- list-style-image: url('img/icon-email.png'); -->
-      <!-- } -->
-      <!-- li.linkedin { -->
-      <!-- list-style-image: url('img/icon-linkedin.png'); -->
-      <!-- } -->
-      <!-- li.twitter { -->
-      <!-- list-style-image: url('img/icon-twitter.png'); -->
-      <!-- } -->
-      <!-- li.github { -->
-      <!-- list-style-image: url('img/icon-github.png'); -->
-      <!-- } -->
-      <!-- .reveal h2 { -->
-      <!-- margin: 0; -->
-      <!-- } -->
-      <!-- .banner { -->
-      <!-- left: -88% !important;  -->
-      <!-- width: 138% !important; -->
-      <!-- top: 15% !important; -->
-      <!-- background-color: rgba(0, 0, 0, 0.75); -->
-      <!-- padding: 0.5em 5em !important; -->
-      <!-- } -->
-      .align_top {
-      top: -56% !important; 
-      }
-      .align_bottom {
-      top: 40% !important;
-      }
-    </style>
-</head>
- 
-<body>
-    <!-- Wrap the entire slide show in a div using the "reveal" class. -->
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+  </head>
+
+  <body>
+
     <div class="reveal">
-      <!-- In between the <div="reveal"> and the <div class="slides">-->
-        <!-- Wrap all slides in a single "slides" class -->
-        <div class="slides">
- 
-            <!-- ALL SLIDES GO HERE -->
-            <!-- Each section element contains an individual slide -->
-            <section>
-              <h1>Test-Driven Development</h1>
-	      <p><br></p>
-		<h2>A hands-on introduction</h2>
-                <p>Berlin, Oct 1, 2014<br>
-		  <a href="mailto:steinbac@mpi-cbg.de">Peter Steinbach</a>
-		</p>        
-            </section>
 
-            <section class="align_top" data-background="http://www.fabuloussavers.com/wallpapers/297b.jpg">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+	<!-- ALL SLIDES GO HERE -->
+	<!-- Each section element contains an individual slide -->
+	<section>
+	  <h1>Test-Driven Development</h1>
+	  <p><br></p>
+	  <h2>A hands-on introduction</h2>
+	  <p>Berlin, Oct 1, 2014<br>
+	    <a href="mailto:steinbac@mpi-cbg.de">Peter Steinbach</a>
+	  </p>        
+	</section>
 
-                <h2><font color="white">Afraid to compile?</font></h2>
-            </section>
- 
-            <section>
-	      <h2>Spectacular image!</h2>
-	      <a href="http://lab.hakim.se/meny/" target="_blank">
-		<img width="320" height="299" data-src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-	      </a>
-                <!-- <h2>Reproducibility</h2> -->
-		<!--   <img width="496" height="335" data-src="http://www.nature.com/polopoly_fs/7.13755.1384885728!/image/Replication.jpg_gen/derivatives/landscape_630/Replication.jpg"> -->
-                <!-- <p><br> -->
-		<!--   from <a href="http://blog.f1000research.com/2014/04/04/reproducibility-tweetchat-recap/">blog.f1000research.com</a></p> -->
-            </section>
- 
-            </div>
+	<section data-background="http://www.fabuloussavers.com/wallpapers/297b.jpg">
+	  <h2><font color="white">Afraid to compile?</font></h2>
+	</section>
+
+	<section>
+	  <h2>Spectacular image!</h2>
+	  <a href="http://blog.f1000research.com/2014/04/04/reproducibility-tweetchat-recap/" target="_blank">
+	    <img width="496" height="335" src="reproducibility-small.jpg" alt="blog.f1000research.com">
+	  </a>
+	</section>
+      </div>
+
     </div>
+
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.min.js"></script>
- 
+
     <script>
-      // Required, even if empty.
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
-      // The "normal" size of the presentation, aspect ratio will be preserved
-      // when the presentation is scaled to fit different resolutions. Can be
-      // specified using percentage units.
-      // width: 1024,
-      // height: 800,
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
 
-      // Factor of the display size that should remain empty around the content
-      margin: 0.1,
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-      // Bounds for smallest/largest possible scale to apply to content
-      minScale: 0.2,
-      maxScale: 1.0
+      // Parallax scrolling
+      // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+      // parallaxBackgroundSize: '2100px 900px',
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
       });
+
     </script>
-</body>
+
+  </body>
 </html>
