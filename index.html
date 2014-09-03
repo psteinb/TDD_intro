@@ -34,6 +34,10 @@
     <!--[if lt IE 9]>
 	<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="js/drug_donut.js"></script>
+
   </head>
 
   <body>
@@ -47,21 +51,37 @@
 	<section>
 	  <h1>Test-Driven Development</h1>
 	  <p><br></p>
-	  <h2>A hands-on introduction</h2>
+	  <h3>A hands-on introduction</h3>
 	  <p>Berlin, Oct 1, 2014<br>
 	    <a href="mailto:steinbac@mpi-cbg.de">Peter Steinbach</a>
 	  </p>        
 	</section>
 
 	<section data-background="http://www.fabuloussavers.com/wallpapers/297b.jpg">
-	  <h2><font color="white">Afraid to compile?</font></h2>
+	  <!-- FIXME: not very flexible -->
+	  <div style="position: absolute; top: -300px;">
+	  <h1><font color="white"><b>Afraid to compile?</b></font></h1>      
+	  </div>
 	</section>
 
 	<section>
-	  <h2>Spectacular image!</h2>
-	  <a href="http://blog.f1000research.com/2014/04/04/reproducibility-tweetchat-recap/" target="_blank">
-	    <img width="496" height="335" src="reproducibility-small.jpg" alt="blog.f1000research.com">
-	  </a>
+	  <section>
+	    <h2>Reproducibility?</h2>
+	    <a href="http://blog.f1000research.com/2014/04/04/reproducibility-tweetchat-recap/" target="_blank">
+	      <img width="496" height="335" src="reproducibility-small.jpg" alt="blog.f1000research.com">
+	    </a>
+	  </section>
+
+	  <section>
+	  <h3><a href="http://www.nature.com/nature/journal/v483/n7391/full/483531a.html">Preclinical Cancer Research</a></h3>
+	  <img width="985" height="560" src="nature_drug_development.png" alt="Nature Comment">
+	  </section>
+
+	  <section>
+	  <h3><a href="http://www.nature.com/nature/journal/v483/n7391/full/483531a.html">Preclinical Cancer Research</a></h3>
+	  <div id="donutchart" style="width: 900px; height: 500px;"></div>
+
+	  </section>
 	</section>
       </div>
 
