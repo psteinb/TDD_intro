@@ -8,7 +8,7 @@ function drawChart() {
     ]);
 
     var options = {
-        title: 'Cancer Drug Development Pre-Clinical Studies',
+        title: '53 Selected Studies',
         pieHole: 0.4,
     };
 
