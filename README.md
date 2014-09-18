@@ -10,4 +10,8 @@ The slides are licensed under the creative commons by attribution license 4.0. T
 
 All material (mostly images) contained in the slides are linked to their source if not produced by the author. If you find your intellectual property is not attributed to your satisfaction, feel free to contact me (steinbach@scionics.de).
 
+## Open Source Teaching
+
+If you find mistakes or would like to discuss my approach to teaching this topic feel free to get in touch by mail (steinbach@scionics.de) or through the github issue tracker.
+
 
