@@ -1,5 +1,7 @@
 google.load("visualization", "1", {packages:["corechart"]});
+
 google.setOnLoadCallback(drawChart);
+
 function drawChart() {
     var data = google.visualization.arrayToDataTable([
         ['Category', 'Landmark Publications'],
@@ -9,7 +11,20 @@ function drawChart() {
 
     var options = {
         title: '53 Selected Studies',
-        pieHole: 0.4,
+	legend:'none',
+        width: '100%',
+        height: '100%',
+        pieHole: 0.2,
+	pieSliceText: 'label',
+	colors: ['#0598d8', '#f97263'],
+	fontSize: 20,
+        chartArea: {
+            left: "3%",
+	    right: "3%",
+            top: "3%",
+            height: "94%",
+            width: "94%"
+        }
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('donutchart'));

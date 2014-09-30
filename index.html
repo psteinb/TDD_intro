@@ -60,13 +60,18 @@
 	<section>
 	  <h2>Disclaimer</h2>
 	  <p style="text-align: left;">This work is licensed under a<br> <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0<br> International License</a>.</p>
-	  <div style="text-align: right; position: absolute; top: 28%; left: 10%; width: 80%;">
+	  <div style="position: absolute; top: 20%; right: 10%; max-width: 80%;">
 	  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img width="176" alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
 	  </div>
 
-	  <p style="text-align: left;">
-	  All material contained in the slides are linked to their source if not produced by the author. If you find intellectual property is not attributed to your satisfaction, feel free to contact <a href="mailto:steinbach@scionics.de">me</a>.
-		</p>
+	  <p style="text-align: left;"><br>
+	  All material contained in the slides are linked to their source if not produced by the author. If you find intellectual property is not attributed to your satisfaction, feel free to contact <a href="mailto:steinbach@scionics.de">me</a>.<br><br>
+	  
+	  For feedback, forks, discussions and contributions, go to 
+	    <center>
+	      <a href="https://github.com/psteinb/TBBIntro">github.com/psteinb/TBBIntro</a>.
+	    </center>
+	  </p>
 	</section>
 
 
@@ -149,8 +154,12 @@
 
 	<section>
 		<h3><b>Preclinical Cancer Research</b></h3>
-		<figure><div id="donutchart" style="height: 600px; max-height: 120%;"></div>
-			<figcaption>from <a href="http://www.nature.com/nature/journal/v483/n7391/full/483531a.html" target="_blank">[doi:10.1038/483531a]</a>
+		
+		<figure >
+		  <center>
+		    <div id="donutchart" style="min-height: 500px; max-height: 120%; max-width: 70%"></div>
+		    </center>
+		  <figcaption>from <a href="http://www.nature.com/nature/journal/v483/n7391/full/483531a.html" target="_blank">[doi:10.1038/483531a]</a>
 			</figcaption>
 		</figure>
 	</section>
@@ -295,34 +304,36 @@
 	  </section>
 	  
 	  <section>
+	    <div style="background-color: #E62F0A; width: 100%; height: 400%; position: absolute;  top: -50%; left: 50%; z-index: -1; opacity: 0.45;">
+	    </div>
+	    
 	    <h2>Summary</h2>
-	    <div style="background-color: #E62F0A; width: 100%; height: 400%;  top: -20%; left: 50%; z-index: -1; opacity: 0.45;">
-
-	    </div>
-	    <div style="background-color: #01BE4C; width: 100%; height: 400%; position: absolute; top: -20%; right: 50%; z-index: -1; opacity: 0.45;">
-	    </div>
+	    
 	    <div style="width: 50%; display: inline-block; margin-right: 9%; vertical-align: top;">
-	      <p style="text-align: right;">
+	      <p style="text-align: right;; font-size: 120%"><br>
 		<ul style="line-height: 150%">
 		  <li class="fragment">Incremental Design</li>
 		  <li class="fragment">Reproducibility</li>
 		  <li class="fragment">Confidence</li>
 		  <li class="fragment">Documentation</li>
-		</ul>
+		</ul><br><br>
 	      </p>
 	    </div>
 
-	    <div style="width: 40%; display: inline-block;">
-	      <p style="text-align: left;">
+	    <div class="fragment" style="background-color: #01BE4C; width: 100%; height: 400%; position: absolute; top: -50%; right: 50%; z-index: -1; opacity: 0.45;" >
+	    </div>
+	    <div style="width: 40%; display: inline-block;" >
+	      <p style="text-align: left;"><br>
 	    	<ul style="line-height: 150%;">
-		  <li class="fragment">code is not bug free</li>
+		  <li class="fragment">code is less bug free</li>
 		  <li class="fragment">human interaction?</li>
 		  <li class="fragment">more source code</li>
 		  <li class="fragment">can be misleading</li>
 		</ul>
+		<br><br>
 	      </p>
 	    </div>
-	    <h2 class="fragment"><a href="#/10">Ongoing Discussion!</a></h2>
+	    <h3 class="fragment"><a href="#/10">Ongoing Discussion!</a></h3>
 	  </section>
 	</section>
 
@@ -366,12 +377,30 @@ Total Test time (real) =   0.02 sec
 
 	  <section>
 	    <h2>Documentation</h2>
+	    <p class="fragment"><b>showcase API</b><br>	    </p>
+	  	    <pre class="fragment"><code data-trim>
+def test_simple_construction(self):
+  local_instance = foo()
+  return self.assertTrue(len(local_instance)<1)
+
+def test_iterator_construction(self):
+  local_instance = foo(xrange(1,10))
+  return self.assertTrue(len(local_instance)==10)
+	    </code></pre>
+
+
+
+	    <p class="fragment"><b>bug logging
+	    </b><br>	    </p>
 	    <pre class="fragment"><code data-trim>
 def test_bug_42_init_failed(self):
-  #..
+  #...
   return self.assertTrue(works_now)
 	    </code></pre>
 
+	    
+	    <p class="fragment"><b>showcase corner cases
+	    </b><br></p>
 	    <pre class="fragment"><code data-trim>
 def test_negative_values_throw(self):
   return self.assertThrows(foo(-1))
@@ -381,10 +410,10 @@ def test_negative_values_throw(self):
 
 	<section>
 	  <h2>Summary</h2>
-	  <ul style="line-height: 150%;">
-	    <li class="fragment">test-driven development takes some time to pick up</li>
-	    <li class="fragment">helps create confidence and reproducibility</li>
-	    <li class="fragment">imply good software design step-by-step</li>
+	  <ul style="line-height: 150%; font-size: 120%">
+	    <li class="fragment">test-driven development has a learning curve</li>
+	    <li class="fragment">creates confidence and reproducibility</li>
+	    <li class="fragment">good software design step-by-step</li>
 	    <li class="fragment">no silver bullet!</li>
 	  </ul>
 	</section>
