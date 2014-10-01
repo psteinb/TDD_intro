@@ -349,12 +349,14 @@
 	    <h2>Test Doubles and Mocks</h2>
 	    <figure>
 	    <a href="https://openclipart.org/detail/118831/traffic-light-green-dan--01-by-anonymous">
-	      <img width="300" style="max-width: 30%" src="https://openclipart.org/people/Anonymous/traffic_light_green_dan__01.svg" />
+	      <img style="max-width: 25%;min-width: 20%;" src="https://openclipart.org/people/Anonymous/traffic_light_green_dan__01.svg" />
 	    </a>
 	    <figcaption>from <a href="https://openclipart.org/detail/118831/traffic-light-green-dan--01-by-anonymous" target="_blank">openclipart.org</a></figcaption></figure>
-	    
+	    <p><br></p>
+	    <h3>Tests need to be fast!</h3>
 	    <p class="fragment"><br>
-	      <a href="http://martinfowler.com/articles/mocksArentStubs.html">Detailed Discussion</a> by Martin Fowler</p>
+	      Not every software is fast, mimic the slow parts!
+	      (<a href="http://martinfowler.com/articles/mocksArentStubs.html">details</a>)</p>
 	  </section>
 	  
 	  <section>
@@ -377,7 +379,7 @@ Total Test time (real) =   0.02 sec
 
 	  <section>
 	    <h2>Documentation</h2>
-	    <p class="fragment"><b>showcase API</b><br>	    </p>
+	    <p class="fragment"><b>Showcase API</b><br>	    </p>
 	  	    <pre class="fragment"><code data-trim>
 def test_simple_construction(self):
   local_instance = foo()
@@ -387,17 +389,17 @@ def test_iterator_construction(self):
   local_instance = foo(xrange(1,10))
   return self.assertTrue(len(local_instance)==10)
 	    </code></pre>
-
+	    <p><br></p>
 
 
 	    <p class="fragment"><b>bug logging
 	    </b><br>	    </p>
 	    <pre class="fragment"><code data-trim>
 def test_bug_42_init_failed(self):
-  #...
+  # reproduce bug here
   return self.assertTrue(works_now)
 	    </code></pre>
-
+	    <p><br></p>
 	    
 	    <p class="fragment"><b>showcase corner cases
 	    </b><br></p>
@@ -405,13 +407,15 @@ def test_bug_42_init_failed(self):
 def test_negative_values_throw(self):
   return self.assertThrows(foo(-1))
 	    </code></pre>
+	    <p><br></p>
+	    Tests can be the Documentation!
 	  </section>
 	</section>
 
 	<section>
 	  <h2>Summary</h2>
 	  <ul style="line-height: 150%; font-size: 120%">
-	    <li class="fragment">test-driven development has a learning curve</li>
+	    <li class="fragment">real-world test-driven development has a learning curve</li>
 	    <li class="fragment">creates confidence and reproducibility</li>
 	    <li class="fragment">good software design step-by-step</li>
 	    <li class="fragment">no silver bullet!</li>
